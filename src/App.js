@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import { Context } from "./context/Context";
+import "./App.css";
+import { Modal } from "./components/modal/Modal";
+import { Pendiente } from "./components/pendiente/Pendiente";
 
 function App() {
+  const { modal, datos,cambioChecked} = useContext(Context);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {modal ? <Modal /> : ""}
+      <div className="pendientes">
+        {!datos
+          ? ""
+          : datos
+              .filter(dato => dato.estado == false)
+              .map((dato) => {
+              return <Pendiente key={dato._id} dato={dato} cambioChecked={cambioChecked} />;
+            })}
+      </div>
     </div>
   );
 }

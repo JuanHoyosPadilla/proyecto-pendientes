@@ -1,0 +1,62 @@
+.container {
+    background-color: #748DA6;
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.logo span{
+    font-size: 20px;
+    font-weight: 700;
+    color: #D3CEDF;
+}
+
+.container-botones{
+    
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    padding: 20px;
+}
+
+.container-botones .btn-agregar {
+    background-color: #9CB4CC;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #FFFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+.container-botones .btn-agregar:hover{
+    background-color: #D3CEDF;
+    color: black
+}
+
+.container-botones .btn-bar {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    color: #D3CEDF;
+    cursor: pointer;
+}
+
+.container-botones .btn-bar:hover {
+    color: black;
+}
